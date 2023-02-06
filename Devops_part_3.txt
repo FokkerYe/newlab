@@ -1,0 +1,111 @@
+tutorial nginx
+
+
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+https://nodejs.org/en/docs/guides/getting-started-guide/
+=============================
+Ngnix installtion
+ sudo apt-get install nginx
+ nginx -v (checking for success or no successfull)
+Ref=https://www.nginx.com/blog/setting-up-nginx/ (configuration guide)
+apt-get install nginx -y
+systemctl start nginx
+systemctl enable nginx
+systemctl status nginx
+ss -antpl
+nginx -t (or) nginx -T (check for configuration success or no success)
+nginx -s reload 
+Ref certicface export ssl =https://youtu.be/UW-iA2SgPGY
+Ref certicface export ssl=https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-in-ubuntu-20-04-1
+
+  GNU nano 4.8                       New Buffer                       Modified
+upstream lb {
+    server localhost:3000;
+    server localhost:3001;
+}
+ server {
+   listen 80;
+   server_name_;
+   listen [::]:80
+        location /lb {
+            proxy_pass http://lb;
+        }
+    }
+==========================================
+https://youtu.be/NrABKhcGMqs
+AWS Training
+Linux foundation
+A cloud gurgu
+kodekloud
+udemy
+youtube-Exam Pro,AWS REinvent
+=====================================
+𝐅𝐫𝐞𝐞 𝐫𝐞𝐬𝐨𝐮𝐫𝐜𝐞 𝐟𝐨𝐫 𝐲𝐨𝐮𝐫 𝐃𝐞𝐯𝐎𝐩𝐬 𝐂𝐚𝐫𝐞𝐞𝐫
+Sharing with love (heart)
+
+𝐈𝐧𝐭𝐫𝐨𝐝𝐮𝐜𝐭𝐢𝐨𝐧 𝐭𝐨 𝐋𝐢𝐧𝐮𝐱
+https://www.edx.org/course/introduction-to-linux
+
+𝐅𝐮𝐧𝐝𝐚𝐦𝐞𝐧𝐭𝐚𝐥𝐬 𝐨𝐟 𝐑𝐞𝐝 𝐇𝐚𝐭 𝐄𝐧𝐭𝐞𝐫𝐩𝐫𝐢𝐬𝐞 𝐋𝐢𝐧𝐮𝐱
+https://www.edx.org/course/fundamentals-of-red-hat-enterprise-linux
+
+Git Tutorial
+https://www.tutorialspoint.com/git/index.htm
+
+𝐃𝐞𝐯𝐎𝐩𝐬 𝐂𝐮𝐥𝐭𝐮𝐫𝐞 𝐚𝐧𝐝 𝐌𝐢𝐧𝐝𝐬𝐞𝐭
+https://www.coursera.org/learn/devops-culture-and-mindset
+
+𝐂𝐨𝐧𝐭𝐢𝐧𝐮𝐨𝐮𝐬 𝐃𝐞𝐥𝐢𝐯𝐞𝐫𝐲 & 𝐃𝐞𝐯𝐎𝐩𝐬
+https://www.coursera.org/learn/uva-darden-continous-delivery-devops
+
+𝐈𝐧𝐭𝐫𝐨𝐝𝐮𝐜𝐭𝐢𝐨𝐧 𝐭𝐨 𝐉𝐞𝐧𝐤𝐢𝐧𝐬
+https://www.edx.org/course/introduction-to-jenkins
+𝐃𝐨𝐜𝐤𝐞𝐫 𝐄𝐬𝐬𝐞𝐧𝐭𝐢𝐚𝐥𝐬
+https://www.udemy.com/course/docker-essentials/
+
+𝐈𝐧𝐭𝐫𝐨𝐝𝐮𝐜𝐭𝐢𝐨𝐧 𝐭𝐨 𝐂𝐥𝐨𝐮𝐝 𝐂𝐨𝐦𝐩𝐮𝐭𝐢𝐧𝐠
+https://www.coursera.org/learn/introduction-to-cloud
+
+𝐀𝐖𝐒 𝐅𝐨𝐮𝐧𝐝𝐚𝐭𝐢𝐨𝐧𝐬: 𝐆𝐞𝐭𝐭𝐢𝐧𝐠 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐰𝐢𝐭𝐡 𝐭𝐡𝐞 𝐀𝐖𝐒 𝐂𝐥𝐨𝐮𝐝 𝐄𝐬𝐬𝐞𝐧𝐭𝐢𝐚𝐥𝐬
+https://explore.skillbuilder.aws/learn/course/external/view/elearning/482/aws-foundations-getting-started-with-the-aws-cloud-essentials
+
+𝐀𝐖𝐒 𝐂𝐥𝐨𝐮𝐝 𝐏𝐫𝐚𝐜𝐭𝐢𝐭𝐢𝐨𝐧𝐞𝐫 𝐄𝐬𝐬𝐞𝐧𝐭𝐢𝐚𝐥𝐬
+https://explore.skillbuilder.aws/learn/course/external/view/elearning/134/aws-cloud-practitioner-essentials
+
+𝐀𝐧𝐬𝐢𝐛𝐥𝐞 𝐁𝐚𝐬𝐢𝐜𝐬: 𝐀𝐮𝐭𝐨𝐦𝐚𝐭𝐢𝐨𝐧 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐎𝐯𝐞𝐫𝐯𝐢𝐞𝐰
+https://www.redhat.com/en/services/training/do007-ansible-essentials-simplicity-automation-technical-overview?sc_cid=70160000001202LAAQ
+
+𝐇𝐚𝐬𝐡𝐢𝐂𝐨𝐫𝐩 𝐓𝐞𝐫𝐫𝐚𝐟𝐨𝐫𝐦 𝐀𝐬𝐬𝐨𝐜𝐢𝐚𝐭𝐞 𝐂𝐞𝐫𝐭𝐢𝐟𝐢𝐜𝐚𝐭𝐢𝐨𝐧 𝐂𝐨𝐮𝐫𝐬𝐞 𝐛𝐲 𝐀𝐧𝐝𝐫𝐞𝐰 𝐁𝐫𝐨𝐰𝐧
+https://www.youtube.com/watch?v=V4waklkBC38
+
+𝐆𝐞𝐭𝐭𝐢𝐧𝐠 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐰𝐢𝐭𝐡 𝐃𝐞𝐯𝐎𝐩𝐬 𝐨𝐧 𝐀𝐖𝐒
+https://explore.skillbuilder.aws/learn/course/external/view/elearning/2000/getting-started-with-devops-on-aws
+
+𝐀𝐖𝐒 𝐖𝐨𝐫𝐤𝐬𝐡𝐨𝐩𝐬
+https://workshops.aws/
+𝐊𝐮𝐛𝐞𝐫𝐧𝐞𝐭𝐞𝐬: 𝐆𝐞𝐭𝐭𝐢𝐧𝐠 𝐒𝐭𝐚𝐫𝐭𝐞𝐝
+https://www.udemy.com/course/kubernetes-getting-started/
+
+𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐢𝐧𝐠 𝐂𝐥𝐨𝐮𝐝-𝐍𝐚𝐭𝐢𝐯𝐞 𝐀𝐩𝐩𝐥𝐢𝐜𝐚𝐭𝐢𝐨𝐧𝐬 𝐰𝐢𝐭𝐡 𝐌𝐢𝐜𝐫𝐨𝐬𝐞𝐫𝐯𝐢𝐜𝐞𝐬 𝐀𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭𝐮𝐫𝐞𝐬
+https://www.redhat.com/en/services/training/do092-developing-cloud-native-applications-microservices-architectures
+
+𝐃𝐞𝐯𝐎𝐩𝐬 𝐓𝐡𝐞 𝐇𝐚𝐫𝐝 𝐖𝐚𝐲 𝐀𝐖𝐒
+https://github.com/AdminTurnedDevOps/DevOps-The-Hard-Way-AWS
+========================
+https://youtu.be/7Nej7NMaQKE
+
+https://devops-myanmar.gitbook.io/docker-quick-start/
+https://app.diagrams.net
