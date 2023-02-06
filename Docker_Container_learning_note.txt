@@ -1,0 +1,152 @@
+lab-1
+Command
+#docker pull ubuntu
+#docker pull centos
+#docker images
+#docker run -d ubuntu
+#docker run -d centos
+#docker ps -a
+
+
+=========================================================================
+lab-2
+docker hub
+https://hub.docker.com/_/nginx
+
+==================================================
+lab-3
+#docker pull redhat/ubi8
+#docker pull ubntu:22.04
+#docker pull centos
+#docker ps
+#docker ps -a
+#docker images
+#docker run -d -t --name my-ubuntu ubuntu
+#docker run -d -t --name my-centos centos
+#docker run -d -t --name my-redhat redhat/ubi8
+#docker exec -it my-ubuntu bash
+#docker exec -it my-centos bash
+#docekr exec -it my-redhat bash
+===============================================================
+lab-4
+docker ip is related to docker container ip
+#docker images
+#docker ps 
+#docker run -d -t --name my-centos centos
+#ifconfig
+#ping 172.0.0.4
+=========================
+lab-5
+Docker port forwarding
+#docker pull nginx
+#docker run -d -t --name my-nginx -p 3000:80 nginx
+#
+======================================================
+lab-6
+play with docker
+========================================================
+lab-7
+How to Copy Files from Host to Containers
+root@ubuntuserver-2204:~# docker cp index.html fcccfaf3a97b:/usr/share/nginx/html/
+root@ubuntuserver-2204:~#
+==========================
+lab-8
+add
+copy
+ENV
+FROM=pull
+user=userid
+volume=host directory
+workdir =you work name directory
+label=name
+----
+root@ubuntuserver-2204:~# cat Dockerfile
+FROM nginx:latest
+LABEL maintainer="ayk-learn"
+EXPOSE 90
+
+root@ubuntuserver-2204:~#
+
+
+
+root@ubuntuserver-2204:~# nano Dockerfile
+root@ubuntuserver-2204:~# docker build -t my-nginx3 .
+Sending build context to Docker daemon  15.36kB
+Step 1/3 : FROM nginx:latest
+ ---> a99a39d070bf
+Step 2/3 : LABEL maintainer="ayk-learn"
+ ---> Running in 0910b9e9f23b
+Removing intermediate container 0910b9e9f23b
+ ---> 60276bd08c10
+Step 3/3 : EXPOSE 90
+ ---> Running in 4165fb6ede6d
+Removing intermediate container 4165fb6ede6d
+ ---> 1068e09cdfe6
+Successfully built 1068e09cdfe6
+Successfully tagged my-nginx3:latest
+root@ubuntuserver-2204:~#
+root@ubuntuserver-2204:~# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+my-nginx3     latest    1068e09cdfe6   2 minutes ago   142MB
+ubuntu        latest    58db3edaf2be   7 days ago      77.8MB
+nginx         latest    a99a39d070bf   3 weeks ago     142MB
+redhat/ubi8   latest    6a2ef33ab97f   3 weeks ago     207MB
+hello-world   latest    feb5d9fea6a5   16 months ago   13.3kB
+centos        latest    5d0da3dc9764   16 months ago   231MB
+root@ubuntuserver-2204:~# docker run -dp 9000:80
+my-nginx3
+"docker run" requires at least 1 argument.
+See 'docker run --help'.
+
+Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+Run a command in a new container
+my-nginx3: command not found
+root@ubuntuserver-2204:~# docker run -dp 9000:80 my-nginx3
+717949ee72992b02db94541f65a1c9da224c59f5d962fc7fdb22ec92087fdf5c
+root@ubuntuserver-2204:~#
+
+=========================================
+lab-9 Docker file part-02
+create dockerfile
+FROM ubuntu:latest
+RUN apt-get update -y && apt-get install vim -y
+RUN apt-get install nginx -y
+CMD ["nginx", "-g", "daemon off;"]
+EXPOSE 80
+
+#docker build -t ubuntu-myngnx .
+docker run -d -p 8000:80 ubuntu-myngnx
+
+==============================================
+lab-10 Docker file part-03
+#docker pull ubuntu
+#docker images
+#docker run -it -d -p 8000:8000 ubuntu
+#docker ps
+ #docker exec -it 6da9f5df6ec3 bash
+==============
+https://docs.docker.com/language/nodejs/build-images/
+lab-11 Docker file part-04
+FROM node
+WORKDIR /app
+COPY . /app
+RUN npm init -y
+RUN npm install ronin-server ronin-mocks
+CMD ["node" , "server.js"]
+EXPOSE 8000
+
+#  docker build -t my-node .
+#docker image
+#docker run -it -d -p 8000:8000 my-node
+========================
+lab-12 Docker file part-05
+#docker pull node
+#docker run -it -dp 3000:3000 node
+#docker exec -it   bash
+#git clone https://github.com/docker/getting-started.git
+#cd getting-started/app  yarn install --production
+=================================================
+
+
+
